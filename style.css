@@ -139,3 +139,18 @@ footer {
   color: #aaa;
   border-top: 2px solid #e63946;
 }
+
+.logos {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.logos img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
