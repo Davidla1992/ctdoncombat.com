@@ -41,7 +41,14 @@ nav a:hover {
   background-color: #444;
   border-radius: 5px;
 }
-
+.instrutor img {
+  display: block;          /* Garante que a imagem se comporte como bloco */
+  margin: 0 auto;          /* Centraliza horizontalmente */
+  border-radius: 12px;     /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Sombra suave */
+  max-width: 100%;         /* Responsivo: não ultrapassa o tamanho do container */
+  height: auto;            /* Mantém a proporção */
+}
 /* Título com letras amarelas */
 .logo h1 {
   font-size: 2rem;
