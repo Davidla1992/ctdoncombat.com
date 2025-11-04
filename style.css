@@ -42,9 +42,11 @@ nav a:hover {
   border-radius: 5px;
 }
 
+/* Título com letras amarelas */
 .logo h1 {
   font-size: 2rem;
   font-weight: bold;
+  color: #FFD700; /* amarelo ouro */
 }
 
 /* Seção Hero */
