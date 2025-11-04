@@ -140,17 +140,29 @@ footer {
   border-top: 2px solid #e63946;
 }
 
+.filiacoes {
+  margin-bottom: 10px;
+}
+
+.filiacoes h3 {
+  font-size: 1rem;
+  color: #f4f4f4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .logos {
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .logos img {
-  width: 120px;
+  width: 60px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  box-shadow: 0 0 5px rgba(255,255,255,0.1);
 }
