@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* Fonte personalizada (opcional) */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #000;
@@ -99,6 +100,13 @@ main {
   box-shadow: 0 0 10px #000;
   font-size: 1.1em;
   text-align: center;
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+  background-color: #333;
+  box-shadow: 0 0 15px orange;
+  cursor: pointer;
 }
 
 /* Rodapé */
@@ -107,4 +115,22 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .modalidades {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
 }
