@@ -15,7 +15,6 @@ body {
 /* Cabeçalho */
 header {
   background-color: #111;
-  color: #fff;
   padding: 20px;
   text-align: center;
 }
@@ -30,13 +29,15 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff;
+  color: yellow; /* Letras amarelas no menu */
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .logo h1 {
   font-size: 1.8rem;
+  color: yellow; /* Título em amarelo */
 }
 
 /* Hero */
