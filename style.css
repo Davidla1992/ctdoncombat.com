@@ -7,22 +7,29 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
   line-height: 1.6;
+}
+
+/* Container geral */
+main, header, footer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 /* Cabeçalho */
 header {
-  background-color: #111;
-  color: #fff;
+  background-color: #000;
   padding: 20px 0;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-bottom: 2px solid #f0c000;
 }
 
 .logo h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  color: #f0c000;
   margin-bottom: 10px;
 }
 
@@ -38,7 +45,7 @@ nav ul.menu li {
 }
 
 nav ul.menu a {
-  color: #fff;
+  color: #f0f0f0;
   text-decoration: none;
   font-weight: bold;
   padding: 8px 12px;
@@ -55,8 +62,8 @@ nav ul.menu a:hover {
 .hero {
   text-align: center;
   padding: 60px 20px 30px;
-  background: linear-gradient(to right, #222, #444);
-  color: #fff;
+  background: linear-gradient(to right, #222, #333);
+  border-bottom: 2px solid #f0c000;
 }
 
 .hero-img {
@@ -70,21 +77,35 @@ nav ul.menu a:hover {
 
 .hero-title {
   font-size: 1.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  color: #f0c000;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #f0c000;
+  color: #000;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #d4a000;
 }
 
 /* Modalidades */
 .modalidades {
   padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
   text-align: center;
 }
 
 .modalidades h3 {
   font-size: 1.6rem;
   margin-bottom: 20px;
-  color: #222;
+  color: #f0c000;
 }
 
 .cards {
@@ -95,32 +116,57 @@ nav ul.menu a:hover {
 }
 
 .card {
-  background-color: #fff;
+  background-color: #2a2a2a;
   padding: 25px;
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+  text-decoration: none;
+  color: #f0f0f0;
+  display: block;
+  text-align: center;
+  border: 2px solid transparent;
 }
 
 .card:hover {
   transform: scale(1.05);
-  background-color: #fef3c7;
+  background-color: #3a3a3a;
+  border-color: #f0c000;
+}
+
+/* Descrição das modalidades */
+.descricao {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.descricao h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f0c000;
+}
+
+.descricao p {
+  font-size: 1rem;
+  color: #ccc;
 }
 
 /* Rodapé */
 footer {
-  background-color: #111;
-  color: #fff;
+  background-color: #000;
+  color: #ccc;
   text-align: center;
   padding: 30px 20px;
   margin-top: 40px;
+  border-top: 2px solid #f0c000;
 }
 
 footer h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #f0c000;
 }
 
 footer .logos img {
@@ -131,13 +177,17 @@ footer .logos img {
 footer p {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: #ccc;
 }
 
 /* Responsividade */
 @media (max-width: 600px) {
   .hero-title {
     font-size: 1.4rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 
   nav ul.menu {
