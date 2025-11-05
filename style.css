@@ -2,22 +2,27 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(to right, #1a1a1a, #2c2c2c);
+  color: #FFD700;
 }
 
+/* Cabeçalho e rodapé */
 header, footer {
   text-align: center;
-  background-color: #222;
-  color: white;
+  background: linear-gradient(to right, #333, #111);
+  color: #FFD700;
   padding: 20px 0;
+  box-shadow: 0 0 10px #FFD700;
 }
 
 .logo h1 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 2em;
+  text-shadow: 1px 1px 2px #000;
 }
 
+/* Menu */
 nav ul.menu {
   list-style: none;
   padding: 0;
@@ -28,45 +33,55 @@ nav ul.menu {
 }
 
 nav ul.menu li a {
-  color: white;
+  color: #FFD700;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+nav ul.menu li a:hover {
+  background-color: #FFD700;
+  color: #111;
 }
 
 /* Hero section */
 .hero {
   text-align: center;
-  padding: 40px 20px;
-  background-color: #fff;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #222, #111);
+  color: #FFD700;
 }
 
 .hero-img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #FFD700;
 }
 
 .hero-title {
-  font-size: 2em;
-  margin: 20px 0;
-  color: #333;
+  font-size: 2.5em;
+  margin: 30px 0;
+  text-shadow: 2px 2px 4px #000;
 }
 
 /* Botão chamativo */
 .cta-button {
   display: inline-block;
-  padding: 15px 30px;
-  background-color: #FFD700; /* Amarelo ouro */
-  color: #000;
-  font-size: 1.1em;
+  padding: 15px 35px;
+  background: linear-gradient(to right, #FFD700, #FFC300);
+  color: #111;
+  font-size: 1.2em;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #FFC300;
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
 }
