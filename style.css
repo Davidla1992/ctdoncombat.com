@@ -85,3 +85,12 @@ nav ul.menu li a:hover {
   transform: scale(1.08);
   box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
 }
+.footer-logos {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-img {
+  max-width: 200px;
+  height: auto;
+}
