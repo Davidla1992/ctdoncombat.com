@@ -9,46 +9,46 @@
 </head>
 <body>
   <header>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="#">INÍCIO</a></li>
-        <li><a href="#">SOBRE</a></li>
-        <li><a href="#">KRAV MAGA</a></li>
-        <li><a href="#">BOXE</a></li>
-        <li><a href="#">JIU-JITSU</a></li>
-        <li><a href="#">MUAY THAI</a></li>
+    <div class="logo">
+      <h1>Centro de Treinamento Don Combat</h1>
+    </div>
+    <nav aria-label="Menu principal" role="navigation">
+      <ul class="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#kravmaga">Krav Maga</a></li>
+        <li><a href="#boxe">Boxe</a></li>
+        <li><a href="#jiujitsu">Jiu-Jitsu</a></li>
+        <li><a href="#muaythai">Muay Thai</a></li>
       </ul>
     </nav>
-    <div class="logo">
-      <h1> Centro de Treinamento Don Combat</h1>
-    </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="instrutor">
-  <img <img src="fotodon.jpeg" alt="Instrutor Don Combat"> 
-   
-</div>
-      <h2>TRANSFORME SEU CORPO E MENTE COM AS ARTES MARCIAIS</h2>
-      <a href="#" class="cta-button" role="button" aria-label="Conheça nossas modalidades">CONHEÇA NOSSAS MODALIDADES</a>
+        <img src="fotodon.jpeg" alt="Instrutor Don Combat" loading="lazy" />
+      </div>
+      <h2>Transforme seu corpo e mente com as artes marciais</h2>
+      <a href="#modalidades" class="cta-button" role="button" aria-label="Conheça nossas modalidades">Conheça nossas modalidades</a>
     </section>
 
-    <section class="modalidades">
-      <div class="card">BOXING</div>
-      <div class="card">🐝 MUAY THAI</div>
-      <div class="card">💀 KRAV MAGA</div>
-      <div class="card">🥋 JIU-JITSU</div>
+    <section class="modalidades" id="modalidades">
+      <h3>Modalidades</h3>
+      <div class="cards">
+        <div class="card">🥊 Boxe</div>
+        <div class="card">🐝 Muay Thai</div>
+        <div class="card">💀 Krav Maga</div>
+        <div class="card">🥋 Jiu-Jitsu</div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="filiacoes">
+    <section class="filiacoes">
       <h3>Filiações do Muay Thai e do Boxe</h3>
-    </div>
-    <div class="logos">
       <img src="lutasdodon24.jpeg" alt="Logo Confederação de Boxe do Brasil" loading="lazy" />
-    </div>
+    </section>
     <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
   </footer>
 </body>
