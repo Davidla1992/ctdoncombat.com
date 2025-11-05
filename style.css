@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -7,123 +6,115 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
   line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-/* Cabeçalho */
 header {
   background-color: #111;
   color: #fff;
   padding: 20px;
-  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.menu {
-  list-style: none;
+.logo h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+nav ul.menu {
   display: flex;
   justify-content: center;
+  list-style: none;
   flex-wrap: wrap;
-  gap: 15px;
 }
 
-.menu li a {
+nav ul.menu li {
+  margin: 0 15px;
+}
+
+nav ul.menu a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 12px;
-  transition: background-color 0.3s;
+  transition: color 0.3s ease;
 }
 
-.menu li a:hover {
-  background-color: #f0c040;
-  color: #111;
-  border-radius: 5px;
+nav ul.menu a:hover {
+  color: #f0c000;
 }
 
-/* Hero com imagem de fundo */
 .hero {
-  background: url('sua-imagem-de-fundo.jpg') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  background: linear-gradient(to right, #222, #444);
   color: #fff;
   text-align: center;
+  padding: 60px 20px;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 10px;
-}
-
-.titulo-sobre-imagem {
-  color: #f0c040;
-  font-size: 2.5rem;
-  font-weight: bold;
+.hero img {
+  max-width: 200px;
+  border-radius: 50%;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
-
-.hero h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #ffd966; /* amarelo quente */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
 .cta-button {
   display: inline-block;
-  background-color: #f0c040;
-  color: #111;
+  margin-top: 20px;
   padding: 12px 24px;
+  background-color: #f0c000;
+  color: #000;
+  font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #e0b030;
+  background-color: #d4a000;
 }
 
-/* Modalidades */
-.modalidades {
+section {
   padding: 40px 20px;
-  text-align: center;
+  max-width: 900px;
+  margin: auto;
 }
 
-.modalidades h3 {
+section h3 {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+section p {
+  font-size: 1rem;
+  color: #555;
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
 .card {
   background-color: #fff;
   padding: 20px;
-  width: 160px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
   font-size: 1.2rem;
-  font-weight: bold;
-  transition: transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
-/* Rodapé */
 footer {
   background-color: #111;
   color: #fff;
@@ -131,36 +122,7 @@ footer {
   padding: 30px 20px;
 }
 
-.filiacoes h3 {
-  margin-bottom: 10px;
-}
-
-.filiacoes img {
-  max-width: 140px;
+footer img {
+  max-width: 120px;
   margin-top: 10px;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 80%;
-  }
-
-  .titulo-sobre-imagem {
-    font-size: 1.6rem;
-  }
-
-  .hero h2 {
-    font-size: 1.4rem;
-  }
 }
