@@ -60,7 +60,7 @@
 
     .banner-img {
       width: 100%;
-      max-height: 60px; /* Banner bem pequeno */
+      max-height: 60px;
       object-fit: cover;
       display: block;
     }
@@ -98,16 +98,6 @@
       color: #ffcc00;
     }
 
-    .modalidade p {
-      color: #fff;
-      display: none;
-      margin-top: 0.5rem;
-    }
-
-    .modalidade.ativa p {
-      display: block;
-    }
-
     .inicio-button {
       display: block;
       margin: 2rem auto;
@@ -131,6 +121,40 @@
       text-decoration: underline;
     }
 
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 8px;
+      color: #fff;
+      max-width: 500px;
+      text-align: center;
+      border: 2px solid #ffcc00;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: #ffcc00;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       nav ul.menu {
         flex-direction: column;
@@ -142,4 +166,114 @@
       }
 
       .banner-img {
-        max-height: 40px; /* ainda menor em celular
+        max-height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Centro de Treinamento Don Combat</h1>
+    </div>
+    <nav aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="modalidades.html" aria-current="page">Modalidades</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="banner-container">
+      <img src="WhatsApp Image 2025-10-31 at 08.51.43.jpeg" alt="Banner de modalidades" class="banner-img" loading="lazy" />
+    </section>
+
+    <section class="catalogo">
+      <div class="modalidade" data-modal="muaythai">
+        <img src="muaythai.jpg" alt="Muay Thai" />
+        <h3>Muay Thai</h3>
+      </div>
+
+      <div class="modalidade" data-modal="jiujitsu">
+        <img src="jiujitsu.jpg" alt="Jiu-Jitsu" />
+        <h3>Jiu-Jitsu</h3>
+      </div>
+
+      <div class="modalidade" data-modal="boxe">
+        <img src="boxe.jpg" alt="Boxe" />
+        <h3>Boxe</h3>
+      </div>
+
+      <div class="modalidade" data-modal="kravmaga">
+        <img src="kravmaga.jpg" alt="Krav Maga" />
+        <h3>Krav Maga</h3>
+      </div>
+    </section>
+
+    <a href="index.html" class="inicio-button">Voltar para o Início</a>
+  </main>
+
+  <footer id="contato">
+    <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
+    <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modais -->
+  <div id="modal-muaythai" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2>Muay Thai</h2>
+      <p>Arte marcial tailandesa conhecida como a “arte das oito armas”, usando punhos, cotovelos, joelhos e canelas.</p>
+    </div>
+  </div>
+
+  <div id="modal-jiujitsu" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2>Jiu-Jitsu</h2>
+      <p>Arte suave brasileira focada em alavancas, controle e finalizações no solo, ideal para defesa pessoal.</p>
+    </div>
+  </div>
+
+  <div id="modal-boxe" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2>Boxe</h2>
+      <p>Esporte de combate com foco em socos, esquivas e condicionamento físico de alta intensidade.</p>
+    </div>
+  </div>
+
+  <div id="modal-kravmaga" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2>Krav Maga</h2>
+      <p>Sistema israelense de defesa pessoal com foco em sobrevivência, reação rápida e neutralização de ameaças.</p>
+    </div>
+  </div>
+
+  <script>
+    function fecharModal() {
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+      });
+    }
+
+    document.querySelectorAll('.modalidade').forEach(card => {
+      card.addEventListener('click', () => {
+        const tipo = card.getAttribute('data-modal');
+        fecharModal();
+        document.getElementById('modal-' + tipo).style.display = 'flex';
+      });
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal')) {
+        fecharModal();
+      }
+    });
+  </script>
+</body>
+</html>
