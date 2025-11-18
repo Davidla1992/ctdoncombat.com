@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modalidades Don Combat</title>
+  <title>Modalidades - Don Combat</title>
   <style>
     html {
       scroll-behavior: smooth;
@@ -49,7 +49,8 @@
       transition: color 0.3s;
     }
 
-    nav ul.menu li a:hover {
+    nav ul.menu li a:hover,
+    nav ul.menu li a[aria-current="page"] {
       color: #fff;
     }
 
@@ -81,6 +82,7 @@
       box-shadow: 0 2px 5px rgba(255, 255, 0, 0.2);
       cursor: pointer;
       transition: transform 0.3s;
+      text-align: center;
     }
 
     .modalidade:hover {
@@ -99,15 +101,14 @@
     }
 
     .inicio-button {
-      display: block;
-      margin: 2rem auto;
+      display: inline-block;
+      margin-top: 1rem;
       background-color: #ffcc00;
       color: #000;
-      padding: 0.75rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      width: fit-content;
       transition: background-color 0.3s;
     }
 
@@ -181,14 +182,16 @@
         <li><a href="index.html">Início</a></li>
         <li><a href="modalidades.html" aria-current="page">Modalidades</a></li>
         <li><a href="loja.html">Loja</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="banner-container">
-      <img src="WhatsApp Image 2025-10-31 at 08.51.43.jpeg" alt="Banner de modalidades" class="banner-img" loading="lazy" />
+      <img src="banner-modalidades.jpeg" alt="Banner de modalidades" class="banner-img" loading="lazy" />
     </section>
 
     <section class="catalogo">
@@ -216,7 +219,7 @@
     <a href="index.html" class="inicio-button">Voltar para o Início</a>
   </main>
 
-  <footer id="contato">
+  <footer>
     <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
     <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
   </footer>
@@ -227,6 +230,7 @@
       <span class="close" onclick="fecharModal()">&times;</span>
       <h2>Muay Thai</h2>
       <p>Arte marcial tailandesa conhecida como a “arte das oito armas”, usando punhos, cotovelos, joelhos e canelas.</p>
+      <a href="muaythai.html" class="inicio-button">Ver mais</a>
     </div>
   </div>
 
@@ -235,6 +239,7 @@
       <span class="close" onclick="fecharModal()">&times;</span>
       <h2>Jiu-Jitsu</h2>
       <p>Arte suave brasileira focada em alavancas, controle e finalizações no solo, ideal para defesa pessoal.</p>
+      <a href="jiujitsu.html" class="inicio-button">Ver mais</a>
     </div>
   </div>
 
@@ -243,6 +248,7 @@
       <span class="close" onclick="fecharModal()">&times;</span>
       <h2>Boxe</h2>
       <p>Esporte de combate com foco em socos, esquivas e condicionamento físico de alta intensidade.</p>
+      <a href="boxe.html" class="inicio-button">Ver mais</a>
     </div>
   </div>
 
@@ -251,6 +257,7 @@
       <span class="close" onclick="fecharModal()">&times;</span>
       <h2>Krav Maga</h2>
       <p>Sistema israelense de defesa pessoal com foco em sobrevivência, reação rápida e neutralização de ameaças.</p>
+      <a href="kravmaga.html" class="inicio-button">Ver mais</a>
     </div>
   </div>
 
@@ -265,15 +272,4 @@
       card.addEventListener('click', () => {
         const tipo = card.getAttribute('data-modal');
         fecharModal();
-        document.getElementById('modal-' + tipo).style.display = 'flex';
-      });
-    });
-
-    window.addEventListener('click', e => {
-      if (e.target.classList.contains('modal')) {
-        fecharModal();
-      }
-    });
-  </script>
-</body>
-</html>
+        document.getElementById('modal
