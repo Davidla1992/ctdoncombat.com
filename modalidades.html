@@ -3,22 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modalidades - Don Combat</title>
+  <title>Modalidades Don Combat</title>
   <style>
-    /* Mesmo CSS do index.html */
-    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; color: #222; margin: 0; }
-    header, footer { background-color: #111; color: #fff; text-align: center; padding: 1rem; }
-    nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; padding: 0; }
-    nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
-    nav ul li a:hover { color: #d32f2f; }
-    main { padding: 2rem; text-align: center; }
-    .inicio-button { display: block; margin: 2rem auto; background-color: #d32f2f; color: #fff; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; width: fit-content; }
-    .inicio-button:hover { background-color: #b71c1c; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header, footer {
+      background-color: #ffcc00;
+      color: #000;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    .banner-container {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .banner-container img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffcc00;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .modalidade {
+      background-color: #111;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(255, 255, 0, 0.2);
+    }
+
+    .modalidade img {
+      max-width: 100%;
+      border-radius: 4px;
+      border: 2px solid #ffcc00;
+    }
+
+    .modalidade h3 {
+      margin: 0.5rem 0;
+      color: #ffcc00;
+    }
+
+    .modalidade p {
+      color: #fff;
+    }
+
+    .inicio-button {
+      display: block;
+      margin: 2rem auto;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      width: fit-content;
+      transition: background-color 0.3s;
+    }
+
+    .inicio-button:hover {
+      background-color: #e6b800;
+    }
+
+    footer a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .modalidade {
+        max-width: 90%;
+      }
+
+      .banner-text {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Modalidades</h1>
+    <h1>Modalidades Don Combat</h1>
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
@@ -29,14 +155,30 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Conheça nossas modalidades</h2>
-    <p>Muay Thai, Jiu-Jitsu, Boxe, MMA, Defesa Pessoal e muito mais.</p>
+  <!-- Banner com imagem e texto sobreposto -->
+  <div class="banner-container">
+    <img src="modalidades.jpg" alt="Banner de modalidades" loading="lazy" />
+    <div class="banner-text">Escolha sua arte. Supere seus limites.</div>
+  </div>
 
-    <a href="index.html" class="inicio-button">🏠 Voltar ao Início</a>
+  <main>
+    <div class="modalidade">
+      <img src="muaythai.jpg" alt="Muay Thai" />
+      <h3>Muay Thai</h3>
+      <p>Disciplina tailandesa focada em força, resistência e técnica de combate com joelhos e cotovelos.</p>
+    </div>
+
+    <div class="modalidade">
+      <img src="jiujitsu.jpg" alt="Jiu-Jitsu" />
+      <h3>Jiu-Jitsu</h3>
+      <p>Arte suave brasileira voltada para defesa pessoal, controle corporal e finalizações no solo.</p>
+    </div>
+
+    <a href="index.html" class="inicio-button">Voltar para o Início</a>
   </main>
 
-  <footer>
+  <footer id="contato">
+    <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
     <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
   </footer>
 </body>
