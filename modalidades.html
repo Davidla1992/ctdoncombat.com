@@ -78,13 +78,45 @@
       text-align: center;
     }
 
+    .filtros {
+      margin-bottom: 2rem;
+    }
+
+    .filtros button {
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .filtros button:hover {
+      background-color: #e6b800;
+    }
+
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
     .modalidade {
       background-color: #111;
       padding: 1rem;
-      margin: 1rem auto;
-      max-width: 300px;
+      width: 280px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(255, 255, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .modalidade:hover {
+      transform: scale(1.03);
     }
 
     .modalidade img {
@@ -100,6 +132,12 @@
 
     .modalidade p {
       color: #fff;
+      display: none;
+      margin-top: 0.5rem;
+    }
+
+    .modalidade.ativa p {
+      display: block;
     }
 
     .inicio-button {
@@ -131,13 +169,13 @@
         align-items: center;
       }
 
-      .modalidade {
-        max-width: 90%;
-      }
-
       .banner-text {
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
+      }
+
+      .modalidade {
+        width: 90%;
       }
     }
   </style>
@@ -155,23 +193,36 @@
     </nav>
   </header>
 
-  <!-- Banner com imagem e texto sobreposto -->
   <div class="banner-container">
     <img src="modalidades.jpg" alt="Banner de modalidades" loading="lazy" />
     <div class="banner-text">Escolha sua arte. Supere seus limites.</div>
   </div>
 
   <main>
-    <div class="modalidade">
-      <img src="muaythai.jpg" alt="Muay Thai" />
-      <h3>Muay Thai</h3>
-      <p>Disciplina tailandesa focada em força, resistência e técnica de combate com joelhos e cotovelos.</p>
+    <div class="filtros">
+      <button onclick="filtrar('todas')">Todas</button>
+      <button onclick="filtrar('em-pe')">Luta em pé</button>
+      <button onclick="filtrar('solo')">Chão</button>
     </div>
 
-    <div class="modalidade">
-      <img src="jiujitsu.jpg" alt="Jiu-Jitsu" />
-      <h3>Jiu-Jitsu</h3>
-      <p>Arte suave brasileira voltada para defesa pessoal, controle corporal e finalizações no solo.</p>
+    <div class="catalogo">
+      <div class="modalidade" data-tipo="em-pe">
+        <img src="muaythai.jpg" alt="Muay Thai" />
+        <h3>Muay Thai</h3>
+        <p>Disciplina tailandesa com foco em joelhos, cotovelos e resistência física.</p>
+      </div>
+
+      <div class="modalidade" data-tipo="solo">
+        <img src="jiujitsu.jpg" alt="Jiu-Jitsu" />
+        <h3>Jiu-Jitsu</h3>
+        <p>Arte suave brasileira voltada para controle e finalizações no solo.</p>
+      </div>
+
+      <div class="modalidade" data-tipo="em-pe">
+        <img src="boxe.jpg" alt="Boxe" />
+        <h3>Boxe</h3>
+        <p>Treinamento de socos, esquivas e condicionamento físico intenso.</p>
+      </div>
     </div>
 
     <a href="index.html" class="inicio-button">Voltar para o Início</a>
@@ -181,5 +232,25 @@
     <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
     <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    // Expansão de detalhes
+    document.querySelectorAll('.modalidade').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('ativa');
+      });
+    });
+
+    // Filtro por tipo
+    function filtrar(tipo) {
+      document.querySelectorAll('.modalidade').forEach(card => {
+        if (tipo === 'todas' || card.dataset.tipo === tipo) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
