@@ -4,105 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modalidades Don Combat</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    header, footer {
-      background-color: #ffcc00;
-      color: #000;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1rem 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #fff;
-    }
-
-    .banner-container {
-      position: relative;
-      width: 100%;
-      max-height: 400px;
-      overflow: hidden;
-    }
-
-    .banner-container img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-
-    .banner-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #ffcc00;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .filtros {
-      margin-bottom: 2rem;
-    }
-
-    .filtros button {
-      background-color: #ffcc00;
-      color: #000;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 0.5rem;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .filtros button:hover {
-      background-color: #e6b800;
-    }
-
     .catalogo {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
+      margin-top: 2rem;
     }
 
     .modalidade {
@@ -156,56 +65,26 @@
     .inicio-button:hover {
       background-color: #e6b800;
     }
-
-    footer a {
-      color: #000;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .banner-text {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-      }
-
-      .modalidade {
-        width: 90%;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Modalidades Don Combat</h1>
-    <nav>
-      <ul>
+    <div class="logo">
+      <h1>Centro de Treinamento Don Combat</h1>
+    </div>
+    <nav aria-label="Menu principal">
+      <ul class="menu">
         <li><a href="index.html">Início</a></li>
-        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="modalidades.html" aria-current="page">Modalidades</a></li>
         <li><a href="loja.html">Loja</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><a href="modalidades.html#kravmaga">Krav Maga</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="banner-container">
-    <img src="modalidades.jpg" alt="Banner de modalidades" loading="lazy" />
-    <div class="banner-text">Escolha sua arte. Supere seus limites.</div>
-  </div>
-
   <main>
-    <div class="filtros">
-      <button onclick="filtrar('todas')">Todas</button>
-      <button onclick="filtrar('em-pe')">Luta em pé</button>
-      <button onclick="filtrar('solo')">Chão</button>
-    </div>
-
-    <div class="catalogo">
+    <section class="catalogo">
       <div class="modalidade" data-tipo="em-pe">
         <img src="muaythai.jpg" alt="Muay Thai" />
         <h3>Muay Thai</h3>
@@ -223,7 +102,13 @@
         <h3>Boxe</h3>
         <p>Treinamento de socos, esquivas e condicionamento físico intenso.</p>
       </div>
-    </div>
+
+      <div class="modalidade" id="kravmaga" data-tipo="defesa">
+        <img src="kravmaga.jpg" alt="Krav Maga" />
+        <h3>Krav Maga</h3>
+        <p>Sistema israelense de defesa pessoal com foco em sobrevivência, reação rápida e neutralização de ameaças.</p>
+      </div>
+    </section>
 
     <a href="index.html" class="inicio-button">Voltar para o Início</a>
   </main>
@@ -234,23 +119,11 @@
   </footer>
 
   <script>
-    // Expansão de detalhes
     document.querySelectorAll('.modalidade').forEach(card => {
       card.addEventListener('click', () => {
         card.classList.toggle('ativa');
       });
     });
-
-    // Filtro por tipo
-    function filtrar(tipo) {
-      document.querySelectorAll('.modalidade').forEach(card => {
-        if (tipo === 'todas' || card.dataset.tipo === tipo) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
   </script>
 </body>
 </html>
