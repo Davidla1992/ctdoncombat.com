@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Centro de Treinamento Don Combat</title>
+  <title>Don Combat - Centro de Treinamento</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,26 +13,51 @@
     </div>
     <nav aria-label="Menu principal">
       <ul class="menu">
-        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html" aria-current="page">Início</a></li>
         <li><a href="modalidades.html">Modalidades</a></li>
         <li><a href="loja.html">Loja</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <img src="fotodon.jpeg" alt="Instrutor Don Combat" class="hero-img" loading="lazy" />
-      <h2 class="hero-title">Transforme seu corpo e mente com as artes marciais</h2>
-      <a href="modalidades.html" class="cta-button">Conheça nossas modalidades</a>
+    <section class="banner-container">
+      <img src="banner-principal.jpeg" alt="Banner Don Combat" class="banner-img" loading="lazy" />
+    </section>
+
+    <section class="intro">
+      <h2>Bem-vindo ao Don Combat</h2>
+      <p>Somos um centro de treinamento especializado em artes marciais e defesa pessoal. Oferecemos aulas de Muay Thai, Jiu-Jitsu, Boxe e Krav Maga para todos os níveis.</p>
+      <a href="modalidades.html" class="btn">Conheça as Modalidades</a>
+    </section>
+
+    <section class="destaques">
+      <h2>Destaques</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Horários Flexíveis</h3>
+          <p>Treine pela manhã, tarde ou noite com turmas adaptadas ao seu ritmo.</p>
+          <a href="horarios.html" class="btn">Ver Horários</a>
+        </div>
+        <div class="card">
+          <h3>Localização Estratégica</h3>
+          <p>Estamos em Barueri, com fácil acesso e estacionamento gratuito.</p>
+          <a href="localizacao.html" class="btn">Ver Mapa</a>
+        </div>
+        <div class="card">
+          <h3>Fale Conosco</h3>
+          <p>Tire dúvidas, agende uma aula experimental ou solicite matrícula.</p>
+          <a href="contato.html" class="btn">Entrar em Contato</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer id="contato">
-    <div class="footer-logos">
-      <img src="lutasdodon24.jpeg" alt="Logotipos WBC Brasil e CBB" class="footer-img" loading="lazy" />
-    </div>
+  <footer>
+    <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
     <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
   </footer>
 </body>
