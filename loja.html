@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loja Don Combat</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -78,11 +82,18 @@
       text-align: center;
     }
 
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
     .produto {
       background-color: #111;
       padding: 1rem;
-      margin: 1rem auto;
-      max-width: 300px;
+      width: 280px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(255, 255, 0, 0.2);
     }
@@ -148,7 +159,7 @@
       }
 
       .produto {
-        max-width: 90%;
+        width: 90%;
       }
 
       .banner-text {
@@ -165,32 +176,41 @@
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="modalidades.html">Modalidades</a></li>
-        <li><a href="loja.html">Loja</a></li>
+        <li><a href="loja.html" aria-current="page">Loja</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><a href="modalidades.html#kravmaga">Krav Maga</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Banner com imagem e texto sobreposto -->
   <div class="banner-container">
     <img src="store.jpg" alt="Imagem da loja Don Combat" loading="lazy" />
     <div class="banner-text">Equipamentos e estilo para guerreiros</div>
   </div>
 
   <main>
-    <div class="produto">
-      <img src="luva-muaythai.jpg" alt="Luva de Muay Thai" />
-      <h3>Luva de Muay Thai</h3>
-      <p>R$ 199,90</p>
-      <button>Comprar</button>
-    </div>
+    <section class="catalogo">
+      <div class="produto">
+        <img src="luva-muaythai.jpg" alt="Luva de Muay Thai" />
+        <h3>Luva de Muay Thai</h3>
+        <p>R$ 199,90</p>
+        <button>Comprar</button>
+      </div>
 
-    <div class="produto">
-      <img src="camiseta-doncombat.jpg" alt="Camiseta Don Combat" />
-      <h3>Camiseta Don Combat</h3>
-      <p>R$ 89,90</p>
-      <button>Comprar</button>
-    </div>
+      <div class="produto">
+        <img src="camiseta-doncombat.jpg" alt="Camiseta Don Combat" />
+        <h3>Camiseta Don Combat</h3>
+        <p>R$ 89,90</p>
+        <button>Comprar</button>
+      </div>
+
+      <div class="produto">
+        <img src="blusacombat.jpg" alt="Blusa Don Combat" />
+        <h3>Blusa Don Combat</h3>
+        <p>R$ 149,90</p>
+        <button>Comprar</button>
+      </div>
+    </section>
 
     <a href="index.html" class="inicio-button">Voltar para o Início</a>
   </main>
