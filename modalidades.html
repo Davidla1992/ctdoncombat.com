@@ -61,8 +61,8 @@
 
     .banner-img {
       width: 100%;
-      max-height: 30px;
-      object-fit: contain;
+      max-height: 300px; /* 10x maior que antes */
+      object-fit: cover;
       display: block;
     }
 
@@ -134,7 +134,7 @@
       }
 
       .banner-img {
-        max-height: 20px;
+        max-height: 200px;
       }
     }
   </style>
@@ -158,37 +158,3 @@
 
   <main>
     <section class="banner-container">
-      <img src="modalidadesdoncombat.jpeg" alt="Banner de modalidades" class="banner-img" loading="lazy" />
-    </section>
-
-    <section class="catalogo">
-      <a href="muaythai.html" class="modalidade">
-        <img src="muaythai.jpg" alt="Muay Thai" />
-        <h3>Muay Thai</h3>
-      </a>
-
-      <a href="jiujitsu.html" class="modalidade">
-        <img src="jiujitsu.jpg" alt="Jiu-Jitsu" />
-        <h3>Jiu-Jitsu</h3>
-      </a>
-
-      <a href="boxe.html" class="modalidade">
-        <img src="boxe.jpg" alt="Boxe" />
-        <h3>Boxe</h3>
-      </a>
-
-      <a href="kravmaga.html" class="modalidade">
-        <img src="kravmaga.jpg" alt="Krav Maga" />
-        <h3>Krav Maga</h3>
-      </a>
-    </section>
-
-    <a href="index.html" class="inicio-button">Voltar para o Início</a>
-  </main>
-
-  <footer>
-    <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
-    <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html>
