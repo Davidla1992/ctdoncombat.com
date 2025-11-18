@@ -80,9 +80,9 @@
       width: 280px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(255, 255, 0, 0.2);
-      cursor: pointer;
-      transition: transform 0.3s;
       text-align: center;
+      text-decoration: none;
+      transition: transform 0.3s;
     }
 
     .modalidade:hover {
@@ -101,14 +101,15 @@
     }
 
     .inicio-button {
-      display: inline-block;
-      margin-top: 1rem;
+      display: block;
+      margin: 2rem auto;
       background-color: #ffcc00;
       color: #000;
-      padding: 0.6rem 1.2rem;
+      padding: 0.75rem 1.5rem;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+      width: fit-content;
       transition: background-color 0.3s;
     }
 
@@ -120,40 +121,6 @@
       color: #000;
       font-weight: bold;
       text-decoration: underline;
-    }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .modal-content {
-      background-color: #111;
-      padding: 2rem;
-      border-radius: 8px;
-      color: #fff;
-      max-width: 500px;
-      text-align: center;
-      border: 2px solid #ffcc00;
-      position: relative;
-    }
-
-    .close {
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      font-size: 2rem;
-      color: #ffcc00;
-      cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -191,29 +158,29 @@
 
   <main>
     <section class="banner-container">
-      <img src="modalidadesdoncombat.jpeg" alt="Banner de modalidades" class="banner-img" loading="lazy" />
+      <img src="banner-modalidades.jpeg" alt="Banner de modalidades" class="banner-img" loading="lazy" />
     </section>
 
     <section class="catalogo">
-      <div class="modalidade" data-modal="muaythai">
+      <a href="muaythai.html" class="modalidade">
         <img src="muaythai.jpg" alt="Muay Thai" />
         <h3>Muay Thai</h3>
-      </div>
+      </a>
 
-      <div class="modalidade" data-modal="jiujitsu">
+      <a href="jiujitsu.html" class="modalidade">
         <img src="jiujitsu.jpg" alt="Jiu-Jitsu" />
         <h3>Jiu-Jitsu</h3>
-      </div>
+      </a>
 
-      <div class="modalidade" data-modal="boxe">
+      <a href="boxe.html" class="modalidade">
         <img src="boxe.jpg" alt="Boxe" />
         <h3>Boxe</h3>
-      </div>
+      </a>
 
-      <div class="modalidade" data-modal="kravmaga">
+      <a href="kravmaga.html" class="modalidade">
         <img src="kravmaga.jpg" alt="Krav Maga" />
         <h3>Krav Maga</h3>
-      </div>
+      </a>
     </section>
 
     <a href="index.html" class="inicio-button">Voltar para o Início</a>
@@ -223,53 +190,5 @@
     <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
     <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
   </footer>
-
-  <!-- Modais -->
-  <div id="modal-muaythai" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="fecharModal()">&times;</span>
-      <h2>Muay Thai</h2>
-      <p>Arte marcial tailandesa conhecida como a “arte das oito armas”, usando punhos, cotovelos, joelhos e canelas.</p>
-      <a href="muaythai.html" class="inicio-button">Ver mais</a>
-    </div>
-  </div>
-
-  <div id="modal-jiujitsu" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="fecharModal()">&times;</span>
-      <h2>Jiu-Jitsu</h2>
-      <p>Arte suave brasileira focada em alavancas, controle e finalizações no solo, ideal para defesa pessoal.</p>
-      <a href="jiujitsu.html" class="inicio-button">Ver mais</a>
-    </div>
-  </div>
-
-  <div id="modal-boxe" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="fecharModal()">&times;</span>
-      <h2>Boxe</h2>
-      <p>Esporte de combate com foco em socos, esquivas e condicionamento físico de alta intensidade.</p>
-      <a href="boxe.html" class="inicio-button">Ver mais</a>
-    </div>
-  </div>
-
-  <div id="modal-kravmaga" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="fecharModal()">&times;</span>
-      <h2>Krav Maga</h2>
-      <p>Sistema israelense de defesa pessoal com foco em sobrevivência, reação rápida e neutralização de ameaças.</p>
-      <a href="kravmaga.html" class="inicio-button">Ver mais</a>
-    </div>
-  </div>
-
-  <script>
-    function fecharModal() {
-      document.querySelectorAll('.modal').forEach(modal => {
-        modal.style.display = 'none';
-      });
-    }
-
-    document.querySelectorAll('.modalidade').forEach(card => {
-      card.addEventListener('click', () => {
-        const tipo = card.getAttribute('data-modal');
-        fecharModal();
-        document.getElementById('modal
+</body>
+</html>
