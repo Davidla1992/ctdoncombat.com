@@ -4,51 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modalidades - Don Combat</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Mesmo CSS do index.html */
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; color: #222; margin: 0; }
+    header, footer { background-color: #111; color: #fff; text-align: center; padding: 1rem; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; padding: 0; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+    nav ul li a:hover { color: #d32f2f; }
+    main { padding: 2rem; text-align: center; }
+    .inicio-button { display: block; margin: 2rem auto; background-color: #d32f2f; color: #fff; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; width: fit-content; }
+    .inicio-button:hover { background-color: #b71c1c; }
+  </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <h1>Modalidades Don Combat</h1>
-    </div>
-    <nav aria-label="Menu principal">
-      <ul class="menu">
-        <li><a href="#boxe">Boxe</a></li>
-        <li><a href="#muaythai">Muay Thai</a></li>
-        <li><a href="#kravmaga">Krav Maga</a></li>
-        <li><a href="#jiujitsu">Jiu-Jitsu</a></li>
+    <h1>Modalidades</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-   
+    <h2>Conheça nossas modalidades</h2>
+    <p>Muay Thai, Jiu-Jitsu, Boxe, MMA, Defesa Pessoal e muito mais.</p>
 
-    <section class="descricao" id="boxe">
-      <h3>🥊 Boxe</h3>
-      <p>Treinamento focado em técnica, resistência e agilidade. Ideal para quem busca condicionamento físico e disciplina.</p>
-    </section>
-
-    <section class="descricao" id="muaythai">
-      <h3>🐝 Muay Thai</h3>
-      <p>Arte marcial tailandesa que utiliza punhos, cotovelos, joelhos e pernas. Excelente para defesa pessoal e força explosiva.</p>
-    </section>
-
-    <section class="descricao" id="kravmaga">
-      <h3>💀 Krav Maga</h3>
-      <p>Defesa pessoal prática e direta, com técnicas eficazes para situações reais. Desenvolve confiança e reação rápida.</p>
-    </section>
-
-    <section class="descricao" id="jiujitsu">
-      <h3>🥋 Jiu-Jitsu</h3>
-      <p>Foco em alavancas, imobilizações e técnicas de solo. Ideal para controle corporal e estratégia de combate.</p>
-    </section>
+    <a href="index.html" class="inicio-button">🏠 Voltar ao Início</a>
   </main>
 
   <footer>
-    <div class="footer-logos">
-      <img src="lutasdodon24".jpeg alt="Logotipos WBC Brasil e CBB" class="footer-img" loading="lazy" />
-    </div>
     <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
   </footer>
 </body>
