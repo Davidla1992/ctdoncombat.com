@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loja Don Combat</title>
   <style>
-    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
@@ -44,6 +43,34 @@
 
     nav ul li a:hover {
       color: #fff;
+    }
+
+    .banner-container {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .banner-container img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffcc00;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
     }
 
     main {
@@ -123,6 +150,11 @@
       .produto {
         max-width: 90%;
       }
+
+      .banner-text {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+      }
     }
   </style>
 </head>
@@ -138,6 +170,12 @@
       </ul>
     </nav>
   </header>
+
+  <!-- Banner com imagem e texto sobreposto -->
+  <div class="banner-container">
+    <img src="store.jpg" alt="Imagem da loja Don Combat" loading="lazy" />
+    <div class="banner-text">Equipamentos e estilo para guerreiros</div>
+  </div>
 
   <main>
     <div class="produto">
