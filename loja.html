@@ -49,34 +49,6 @@
       color: #fff;
     }
 
-    .banner-container {
-      position: relative;
-      width: 100%;
-      max-height: 400px;
-      overflow: hidden;
-    }
-
-    .banner-container img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-
-    .banner-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #ffcc00;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-align: center;
-    }
-
     main {
       padding: 2rem;
       text-align: center;
@@ -87,7 +59,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
 
     .produto {
@@ -96,6 +68,11 @@
       width: 280px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(255, 255, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .produto:hover {
+      transform: scale(1.03);
     }
 
     .produto img {
@@ -122,6 +99,7 @@
       cursor: pointer;
       border-radius: 4px;
       font-weight: bold;
+      margin-top: 0.5rem;
       transition: background-color 0.3s;
     }
 
@@ -161,11 +139,6 @@
       .produto {
         width: 90%;
       }
-
-      .banner-text {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-      }
     }
   </style>
 </head>
@@ -178,15 +151,9 @@
         <li><a href="modalidades.html">Modalidades</a></li>
         <li><a href="loja.html" aria-current="page">Loja</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="modalidades.html#kravmaga">Krav Maga</a></li>
       </ul>
     </nav>
   </header>
-
-  <div class="banner-container">
-    <img src="store.jpeg" alt="Imagem da loja Don Combat" loading="lazy" />
-    <div class="banner-text">Equipamentos e estilo para guerreiros</div>
-  </div>
 
   <main>
     <section class="catalogo">
