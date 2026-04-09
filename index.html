@@ -1,254 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Don Combat - Página Inicial</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FuelTrade - Combustíveis Internacionais</title>
   <style>
-    html {
-      scroll-behavior: smooth;
+    /* Reset */
+    * {margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+    body {background:#f5f7fa;color:#333;}
+
+    /* Navbar */
+    .navbar {
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 30px;background:#002244;color:white;position:sticky;top:0;z-index:1000;
+    }
+    .logo {font-size:1.5em;font-weight:bold;}
+    .nav-links {list-style:none;display:flex;gap:20px;}
+    .nav-links li a {color:white;text-decoration:none;font-weight:500;}
+    .hamburger {display:none;flex-direction:column;cursor:pointer;}
+    .hamburger span {height:3px;width:25px;background:white;margin:4px;border-radius:2px;}
+    @media(max-width:768px){
+      .nav-links{display:none;flex-direction:column;background:#002244;position:absolute;top:60px;right:0;width:200px;padding:20px;}
+      .nav-links.open{display:flex;}
+      .hamburger{display:flex;}
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Hero */
+    .hero {
+      background:url('https://images.unsplash.com/photo-1581090700227-4c4f6c2c9f9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;color:white;padding:20px;
     }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
+    .hero h1 {font-size:2.5em;margin-bottom:15px;text-shadow:2px 2px 5px rgba(0,0,0,0.6);}
+    .hero p {font-size:1.2em;margin-bottom:20px;max-width:600px;}
+    .hero a {
+      background:#ffcc00;color:#002244;padding:12px 25px;border-radius:5px;
+      text-decoration:none;font-weight:bold;transition:0.3s;
     }
+    .hero a:hover {background:#e6b800;}
 
-    header {
-      background-color: #ffcc00;
-      color: #000;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Produtos */
+    .produtos {padding:50px 30px;text-align:center;}
+    .produtos h2 {font-size:2em;margin-bottom:30px;color:#002244;}
+    .cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card {
+      background:white;padding:20px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.1);
+      transition:transform 0.3s;
     }
+    .card:hover {transform:translateY(-5px);}
+    .card h3 {color:#002244;margin-bottom:10px;}
+    .card p {font-size:0.95em;color:#555;}
 
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    /* Formulário de Leads */
+    .lead-form {background:#002244;color:white;padding:40px;text-align:center;}
+    .lead-form h2 {margin-bottom:20px;}
+    .lead-form form {display:flex;flex-direction:column;max-width:400px;margin:auto;}
+    .lead-form input, .lead-form textarea {
+      margin:10px 0;padding:12px;border:none;border-radius:5px;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    .lead-form button {
+      background:#ffcc00;color:#002244;padding:12px;border:none;border-radius:5px;
+      font-weight:bold;cursor:pointer;transition:0.3s;
     }
+    .lead-form button:hover {background:#e6b800;}
 
-    .logo h1 {
-      font-size: 1.6rem;
+    /* Área do Cliente */
+    .cliente {padding:50px 30px;text-align:center;}
+    .cliente h2 {color:#002244;margin-bottom:20px;}
+    .tabs {display:flex;justify-content:center;margin-bottom:20px;}
+    .tabs button {
+      padding:10px 20px;margin:0 5px;border:none;border-radius:5px;
+      background:#002244;color:white;cursor:pointer;transition:0.3s;
     }
-
-    .menu-img {
-      height: 100px;
-      width: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+    .tabs button.active {background:#ffcc00;color:#002244;}
+    .form-container {max-width:400px;margin:auto;}
+    .form-container form {display:none;flex-direction:column;}
+    .form-container form.active {display:flex;}
+    .form-container input {
+      margin:10px 0;padding:12px;border:1px solid #ccc;border-radius:5px;
     }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
+    .form-container button {
+      background:#002244;color:white;padding:12px;border:none;border-radius:5px;
+      font-weight:bold;cursor:pointer;transition:0.3s;
     }
+    .form-container button:hover {background:#001122;}
 
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: #000;
-      transition: 0.3s;
-    }
-
-    nav {
-      flex-grow: 1;
-    }
-
-    ul.menu {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul.menu li a {
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    ul.menu li a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 3px;
-      width: 0%;
-      background-color: #000;
-      transition: width 0.3s ease;
-    }
-
-    ul.menu li a:hover::after,
-    ul.menu li a[aria-current="page"]::after {
-      width: 100%;
-    }
-
-    ul.menu li a:hover {
-      background-color: #fff;
-      color: #000;
-    }
-
-    .imagem-pequena {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .logo-img {
-      height: 320px;
-      width: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
-    }
-
-    .intro {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .intro h2 {
-      color: #ffcc00;
-      margin-bottom: 1rem;
-    }
-
-    .intro p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #ffcc00;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      margin-top: 2rem;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #e6b800;
-    }
-
-    footer {
-      background-color: #ffcc00;
-      color: #000;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    footer a {
-      color: #000;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      ul.menu {
-        flex-direction: column;
-        display: none;
-        background-color: #ffcc00;
-        padding: 1rem;
-        border-radius: 8px;
-      }
-
-      ul.menu.active {
-        display: flex;
-      }
-
-      ul.menu li a {
-        text-align: center;
-      }
-
-      .menu-img {
-        height: 80px;
-      }
-
-      .logo-img {
-        height: 240px;
-      }
-    }
+    /* Footer */
+    footer {background:#001122;color:white;text-align:center;padding:20px;font-size:0.9em;}
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="modalidadesdoncombat.jpeg" alt="Imagem Modalidades Don Combat" class="menu-img" loading="lazy" />
-        <h1>Centro de Treinamento</h1>
-      </div>
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav aria-label="Menu principal">
-        <ul class="menu" id="menu">
-          <li><a href="index.html" aria-current="page">Início</a></li>
-          <li><a href="modalidades.html">Modalidades</a></li>
-          <li><a href="loja.html">Loja</a></li>
-          <li><a href="horarios.html">Horários</a></li>
-          <li><a href="localizacao.html">Localização</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
-      </nav>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">FuelTrade</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#logistica">Logística Marítima</a></li>
+      <li><a href="#sobre">Sobre Nós</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="#cliente">Área do Cliente</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section class="imagem-pequena">
-      <img src="doncombat.jpeg" alt="Logo Don Combat" class="logo-img" loading="lazy" />
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Fornecimento Internacional de Combustíveis</h1>
+    <p>Operações marítimas seguras e confiáveis, de 20.000 até 200.000 toneladas. Aviação, Gasolina 95/98, Diesel e Etanol.</p>
+    <a href="#contato">Solicite Cotação</a>
+  </section>
 
-    <section class="intro">
-      <h2>Bem-vindo ao Don Combat</h2>
-      <p>Treinamento de excelência em artes marciais e defesa pessoal. Conheça nossas modalidades e venha treinar com os melhores!</p>
-      <a href="modalidades.html" class="btn">Ver Modalidades</a>
-    </section>
-  </main>
+  <!-- Produtos -->
+  <section class="produtos" id="produtos">
+    <h2>Nossos Combustíveis</h2>
+    <div class="cards">
+      <div class="card"><h3>Aviação (Jet Fuel)</h3><p>Combustível certificado para operações aéreas internacionais.</p></div>
+      <div class="card"><h3>Gasolina 95/98</h3><p>Alta performance e qualidade para grandes distribuições.</p></div>
+      <div class="card"><h3>Diesel</h3><p>Fornecimento em escala industrial para transporte marítimo e terrestre.</p></div>
+      <div class="card"><h3>Etanol</h3><p>Energia renovável com logística global eficiente.</p></div>
+    </div>
+  </section>
 
+  <!-- Formulário de Leads -->
+  <section class="lead-form" id="contato">
+    <h2>Solicite sua Cotação</h2>
+    <form>
+      <input type="text" placeholder="Nome da Empresa" required>
+      <input type="email" placeholder="Email Corporativo" required>
+      <input type="text" placeholder="Volume desejado (toneladas)" required>
+      <textarea placeholder="Porto de destino e detalhes" rows="4"></textarea>
+      <button type="submit">Enviar Solicitação</button>
+    </form>
+  </section>
+
+  <!-- Área do Cliente -->
+  <section class="cliente" id="cliente">
+    <h2>Área do Cliente</h2>
+    <div class="tabs">
+      <button class="tab-btn active" data-target="login">Login</button>
+      <button class="tab-btn" data-target="register">Registrar</button>
+    </div>
+    <div class="form-container">
+      <!-- Login -->
+      <form id="login" class="active">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <!-- Registro -->
+      <form id="register">
+        <input type="text" placeholder="Nome da Empresa" required>
+        <input type="email" placeholder="Email Corporativo" required>
+        <input type="password" placeholder="Senha" required>
+        <input type="text" placeholder="CNPJ" required>
+        <button type="submit">Registrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>Contato: <a href="mailto:contato@doncombat.com">contato@doncombat.com</a></p>
-    <p>&copy; 2025 Don Combat. Todos os direitos reservados.</p>
+    © 2026 FuelTrade - Comércio Internacional de Combustíveis
   </footer>
 
+  <!-- JS -->
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('active');
-    }
-  </script>
-</body>
-</html>
+    const hamburger = document.querySelector(".hamb
